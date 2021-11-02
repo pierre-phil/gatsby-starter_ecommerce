@@ -6,7 +6,6 @@
 
 .container {
   padding: var(--size-gutter-raw);
-  border: 2px solid red;
 }
 
 .header {

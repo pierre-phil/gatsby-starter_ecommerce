@@ -70,7 +70,6 @@ export default function Product({ data: { product, suggestions } }) {
 
   const handleOptionChange = (index, event) => {
     const value = event.target.value
-
     if (value === "") {
       return
     }
@@ -113,6 +112,7 @@ export default function Product({ data: { product, suggestions } }) {
       ) : undefined}
       <div className={container}>
         <div className={productBox}>
+          {/* Images */}
           {hasImages && (
             <div className={productImageWrapper}>
               <div
@@ -149,7 +149,7 @@ export default function Product({ data: { product, suggestions } }) {
             </div>
           )}
           {!hasImages && (
-            <span className={noImagePreview}>No Preview image</span>
+            <span className={noImagePreview}>Pas d'image disponible</span>
           )}
           <div>
             <div className={breadcrumb}>
@@ -161,7 +161,7 @@ export default function Product({ data: { product, suggestions } }) {
             <h2 className={priceValue}>
               <span>{price}</span>
             </h2>
-            <p>Il reste {totalInventory} produits en stock</p>
+            <p>Il reste {totalInventory} exemplaires en stock.</p>
             <fieldset className={optionsWrapper}>
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
