@@ -38,6 +38,7 @@ export default function Product({ data: { product, suggestions } }) {
     title,
     description,
     images,
+    totalInventory,
     images: [firstImage],
   } = product
   const { client } = React.useContext(StoreContext)
@@ -59,7 +60,6 @@ export default function Product({ data: { product, suggestions } }) {
           fetchedProduct?.variants.filter(
             (variant) => variant.id === productVariant.storefrontId
           ) ?? []
-
         if (result.length > 0) {
           setAvailable(result[0].available)
         }
@@ -161,15 +161,16 @@ export default function Product({ data: { product, suggestions } }) {
             <h2 className={priceValue}>
               <span>{price}</span>
             </h2>
+            <p>Il reste {totalInventory} produits en stock</p>
             <fieldset className={optionsWrapper}>
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
                   <div className={selectVariant} key={id}>
+                    <p>{name} :</p>
                     <select
                       aria-label="Variants"
                       onChange={(event) => handleOptionChange(index, event)}
                     >
-                      <option value="">{`Select ${name}`}</option>
                       {values.map((value) => (
                         <option value={value} key={`${name}-${value}`}>
                           {value}
@@ -182,12 +183,12 @@ export default function Product({ data: { product, suggestions } }) {
             <div className={addToCartStyle}>
               <NumericInput
                 aria-label="Quantity"
-                onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
+                onIncrement={() => setQuantity((q) => Math.min(q + 1, 5))}
                 onDecrement={() => setQuantity((q) => Math.max(1, q - 1))}
                 onChange={(event) => setQuantity(event.currentTarget.value)}
                 value={quantity}
                 min="1"
-                max="20"
+                max="5"
               />
               <AddToCart
                 variantId={productVariant.storefrontId}
@@ -215,11 +216,12 @@ export default function Product({ data: { product, suggestions } }) {
 }
 
 export const query = graphql`
-  query($id: String!, $productType: String!) {
+  query ($id: String!, $productType: String!) {
     product: shopifyProduct(id: { eq: $id }) {
       title
       description
       productType
+      totalInventory
       productTypeSlug: gatsbyPath(
         filePath: "/products/{ShopifyProduct.productType}"
       )
