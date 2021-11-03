@@ -144,7 +144,9 @@ export default function Product({ data: { product, suggestions } }) {
             <h2 className="price_value">
               <span>{price}</span>
             </h2>
-            <p>Il reste {totalInventory} exemplaires en stock.</p>
+            <p className="stock_left">
+              Il reste <span>{totalInventory}</span> exemplaires en stock.
+            </p>
             {/* options */}
             <fieldset className="options_wrapper">
               {hasVariants &&
@@ -169,12 +171,12 @@ export default function Product({ data: { product, suggestions } }) {
             <div className="add-to-cart_style">
               <NumericInput
                 aria-label="Quantity"
-                onIncrement={() => setQuantity((q) => Math.min(q + 1, 5))}
+                onIncrement={() => setQuantity((q) => Math.min(q + 1, 3))}
                 onDecrement={() => setQuantity((q) => Math.max(1, q - 1))}
                 onChange={(event) => setQuantity(event.currentTarget.value)}
                 value={quantity}
                 min="1"
-                max="5"
+                max="3"
               />
               <AddToCart
                 variantId={productVariant.storefrontId}
@@ -182,6 +184,8 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
+            {/* type & tags */}
+            {/*
             <div className="meta-section">
               <span className="label_font">Type</span>
               <span className="tag-list">
@@ -194,6 +198,7 @@ export default function Product({ data: { product, suggestions } }) {
                 ))}
               </span>
             </div>
+                */}
           </div>
         </div>
       </div>

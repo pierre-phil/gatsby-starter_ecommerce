@@ -4,6 +4,8 @@ import { Header } from "./header"
 import { Footer } from "./footer"
 import { Seo } from "./seo"
 
+import "./layout.scss"
+
 export function Layout({ children }) {
   return (
     <div>
