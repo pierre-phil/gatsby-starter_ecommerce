@@ -2,13 +2,14 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { Layout } from "../../../components/layout"
 import isEqual from "lodash.isequal"
-import { GatsbyImage, getSrc } from "gatsby-plugin-image"
+import { getSrc } from "gatsby-plugin-image"
 import { StoreContext } from "../../../context/store-context"
 import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
+import Gallery from "../../../components/Gallery/Gallery"
 
 import "./product-page.scss"
 
@@ -25,6 +26,8 @@ export default function Product({ data: { product, suggestions } }) {
     images: [firstImage],
   } = product
   const { client } = React.useContext(StoreContext)
+
+  console.log("images :", images)
 
   const [variant, setVariant] = React.useState({ ...initialVariant })
   const [quantity, setQuantity] = React.useState(1)
@@ -103,6 +106,7 @@ export default function Product({ data: { product, suggestions } }) {
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
+                {/*
                 <ul className="product-image_list">
                   {images.map((image, index) => (
                     <li
@@ -122,6 +126,8 @@ export default function Product({ data: { product, suggestions } }) {
                     </li>
                   ))}
                 </ul>
+*/}
+                <Gallery galleryImages={images} />
               </div>
               {hasMultipleImages && (
                 <div className="scroll-for-more" id="instructions">
@@ -229,9 +235,17 @@ export const query = graphql`
       }
       storefrontId
       images {
-        # altText
+        altText
         id
-        gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+        fullSize: gatsbyImageData
+        thumbnail: gatsbyImageData(width: 250, placeholder: BLURRED)
+        squareThumbnail: gatsbyImageData(
+          aspectRatio: 1
+          width: 200
+          placeholder: BLURRED
+          layout: CONSTRAINED
+        )
+        cover: gatsbyImageData(placeholder: BLURRED)
       }
       variants {
         availableForSale
