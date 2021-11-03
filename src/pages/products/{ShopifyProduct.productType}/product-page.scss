@@ -10,10 +10,11 @@
   column-gap: 4rem;
 }
 
-.header {
+.product_title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  color: $violet;
 }
 
 .product_description {
@@ -77,16 +78,11 @@
 }
 
 .options_wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.2rem;
   padding-bottom: 1.2rem;
 }
 
-.add-to-cart_style {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  gap: 1rem;
+.options-title {
+  margin-top: 1rem;
 }
 
 .select-variant {
@@ -124,6 +120,12 @@
   transform: translateY(-50%);
   width: 13px;
   pointer-events: none;
+}
+
+.add-to-cart_style {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 1rem;
 }
 
 .label_font {

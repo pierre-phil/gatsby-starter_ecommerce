@@ -139,28 +139,31 @@ export default function Product({ data: { product, suggestions } }) {
               <Link to={product.productTypeSlug}>{product.productType}</Link>
               <ChevronIcon size={12} />
             </div>
-            <h1 className="header">{title}</h1>
+            <h1 className="product_title">{title}</h1>
             <p className="product_description">{description}</p>
             <h2 className="price_value">
               <span>{price}</span>
             </h2>
             <p>Il reste {totalInventory} exemplaires en stock.</p>
+            {/* options */}
             <fieldset className="options_wrapper">
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
-                  <div className="select-variant" key={id}>
-                    <p>{name} :</p>
-                    <select
-                      aria-label="Variants"
-                      onChange={(event) => handleOptionChange(index, event)}
-                    >
-                      {values.map((value) => (
-                        <option value={value} key={`${name}-${value}`}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                  <>
+                    <p className="options-title">{name} :</p>
+                    <div className="select-variant" key={id}>
+                      <select
+                        aria-label="Variants"
+                        onChange={(event) => handleOptionChange(index, event)}
+                      >
+                        {values.map((value) => (
+                          <option value={value} key={`${name}-${value}`}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </>
                 ))}
             </fieldset>
             <div className="add-to-cart_style">
