@@ -9,25 +9,8 @@ import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
-import {
-  productBox,
-  container,
-  header,
-  productImageWrapper,
-  productImageList,
-  productImageListItem,
-  scrollForMore,
-  noImagePreview,
-  optionsWrapper,
-  priceValue,
-  selectVariant,
-  labelFont,
-  breadcrumb,
-  tagList,
-  addToCartStyle,
-  metaSection,
-  productDescription,
-} from "./product-page.module.css"
+
+import "./product-page.scss"
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -110,21 +93,21 @@ export default function Product({ data: { product, suggestions } }) {
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
-      <div className={container}>
-        <div className={productBox}>
+      <div className="product_container">
+        <div className="product_box">
           {/* Images */}
           {hasImages && (
-            <div className={productImageWrapper}>
+            <div className="product-image_wrapper">
               <div
                 role="group"
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
-                <ul className={productImageList}>
+                <ul className="product-image_list">
                   {images.map((image, index) => (
                     <li
                       key={`product-image-${image.id}`}
-                      className={productImageListItem}
+                      className="product-image_list-item"
                     >
                       <GatsbyImage
                         objectFit="contain"
@@ -141,7 +124,7 @@ export default function Product({ data: { product, suggestions } }) {
                 </ul>
               </div>
               {hasMultipleImages && (
-                <div className={scrollForMore} id="instructions">
+                <div className="scroll-for-more" id="instructions">
                   <span aria-hidden="true">←</span> scroll for more{" "}
                   <span aria-hidden="true">→</span>
                 </div>
@@ -149,23 +132,23 @@ export default function Product({ data: { product, suggestions } }) {
             </div>
           )}
           {!hasImages && (
-            <span className={noImagePreview}>Pas d'image disponible</span>
+            <span className="no-image">Pas d'image disponible</span>
           )}
           <div>
-            <div className={breadcrumb}>
+            <div className="breadcrumb">
               <Link to={product.productTypeSlug}>{product.productType}</Link>
               <ChevronIcon size={12} />
             </div>
-            <h1 className={header}>{title}</h1>
-            <p className={productDescription}>{description}</p>
-            <h2 className={priceValue}>
+            <h1 className="header">{title}</h1>
+            <p className="product_description">{description}</p>
+            <h2 className="price_value">
               <span>{price}</span>
             </h2>
             <p>Il reste {totalInventory} exemplaires en stock.</p>
-            <fieldset className={optionsWrapper}>
+            <fieldset className="options_wrapper">
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
-                  <div className={selectVariant} key={id}>
+                  <div className="select-variant" key={id}>
                     <p>{name} :</p>
                     <select
                       aria-label="Variants"
@@ -180,7 +163,7 @@ export default function Product({ data: { product, suggestions } }) {
                   </div>
                 ))}
             </fieldset>
-            <div className={addToCartStyle}>
+            <div className="add-to-cart_style">
               <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 5))}
@@ -196,13 +179,13 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
-            <div className={metaSection}>
-              <span className={labelFont}>Type</span>
-              <span className={tagList}>
+            <div className="meta-section">
+              <span className="label_font">Type</span>
+              <span className="tag-list">
                 <Link to={product.productTypeSlug}>{product.productType}</Link>
               </span>
-              <span className={labelFont}>Tags</span>
-              <span className={tagList}>
+              <span className="label_font">Tags</span>
+              <span className="tag-list">
                 {product.tags.map((tag) => (
                   <Link to={`/search?t=${tag}`}>{tag}</Link>
                 ))}
