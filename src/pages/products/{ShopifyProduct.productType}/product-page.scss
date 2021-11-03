@@ -192,7 +192,10 @@
 
 // media queries
 
-@media (min-width: 640px) {
+@media (min-width: $sm) {
+  .select-variant {
+    max-width: 200px;
+  }
   .product_box {
     grid-template-columns: 1fr 2fr;
   }
@@ -201,7 +204,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $xl) {
   .product_box {
     grid-template-columns: repeat(2, 1fr);
   }
