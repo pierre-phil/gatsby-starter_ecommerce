@@ -5,11 +5,11 @@ import { navStyle, navLink, activeLink } from "./navigation.module.scss"
 
 export function Navigation({ className }) {
   const {
-    allShopifyProduct: { productTypes },
+    allShopifyProduct: { productsCount },
   } = useStaticQuery(graphql`
     query {
       allShopifyProduct {
-        productTypes: distinct(field: productType)
+        productsCount: distinct(field: title)
       }
     }
   `)
@@ -22,13 +22,13 @@ export function Navigation({ className }) {
         to="/products/"
         activeClassName={activeLink}
       >
-        All products
+        {`Produits (${productsCount.length})`}
       </Link>
-      {productTypes.map((name) => (
+      {productsCount.map((name) => (
         <Link
           key={name}
           className={navLink}
-          to={`/products/${slugify(name)}`}
+          to={`/products/${slugify(name)}/`}
           activeClassName={activeLink}
         >
           {name}

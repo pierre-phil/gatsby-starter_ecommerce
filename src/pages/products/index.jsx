@@ -7,7 +7,7 @@ import { MoreButton } from "../../components/more-button"
 
 import "./index.scss"
 
-// ~ c'est la page qui recense tous les produits (homepage des produits)
+// ~ All products
 
 export default function Products({ data: { products } }) {
   return (

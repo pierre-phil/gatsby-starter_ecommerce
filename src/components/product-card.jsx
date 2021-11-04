@@ -80,9 +80,7 @@ export const query = graphql`
     id
     title
     # TODO : c'est ce champ qui donne le slug aux produits
-    slug: gatsbyPath(
-      filePath: "/products/{ShopifyProduct.productType}/{ShopifyProduct.handle}"
-    )
+    slug: gatsbyPath(filePath: "/products/{ShopifyProduct.handle}")
     images {
       id
       altText

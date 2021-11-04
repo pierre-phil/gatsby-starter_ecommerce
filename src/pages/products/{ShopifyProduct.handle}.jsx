@@ -1,19 +1,18 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
-import { Layout } from "../../../components/layout"
+import { graphql } from "gatsby"
+import { Layout } from "../../components/layout"
 import isEqual from "lodash.isequal"
 import { getSrc } from "gatsby-plugin-image"
-import { StoreContext } from "../../../context/store-context"
-import { AddToCart } from "../../../components/add-to-cart"
-import { NumericInput } from "../../../components/numeric-input"
-import { formatPrice } from "../../../utils/format-price"
-import { Seo } from "../../../components/seo"
-import { CgChevronRight as ChevronIcon } from "react-icons/cg"
-import Gallery from "../../../components/Gallery/Gallery"
+import { StoreContext } from "../../context/store-context"
+import { AddToCart } from "../../components/add-to-cart"
+import { NumericInput } from "../../components/numeric-input"
+import { formatPrice } from "../../utils/format-price"
+import { Seo } from "../../components/seo"
+import Gallery from "../../components/Gallery/Gallery"
 
 import "./product-page.scss"
 
-export default function Product({ data: { product, suggestions } }) {
+export default function Product({ data: { product } }) {
   const {
     options,
     variants,
@@ -104,27 +103,6 @@ export default function Product({ data: { product, suggestions } }) {
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
-                {/*
-                <ul className="product-image_list">
-                  {images.map((image, index) => (
-                    <li
-                      key={`product-image-${image.id}`}
-                      className="product-image_list-item"
-                    >
-                      <GatsbyImage
-                        objectFit="contain"
-                        loading={index === 0 ? "eager" : "lazy"}
-                        alt={
-                          image.altText
-                            ? image.altText
-                            : `Product Image of ${title} #${index + 1}`
-                        }
-                        image={image.gatsbyImageData}
-                      />
-                    </li>
-                  ))}
-                </ul>
-*/}
                 <Gallery galleryImages={images} />
               </div>
               {hasMultipleImages && (
@@ -139,10 +117,6 @@ export default function Product({ data: { product, suggestions } }) {
             <span className="no-image">Pas d'image disponible</span>
           )}
           <div>
-            <div className="breadcrumb">
-              <Link to={product.productTypeSlug}>{product.productType}</Link>
-              <ChevronIcon size={12} />
-            </div>
             <h1 className="product_title">{title}</h1>
             <p className="product_description">{description}</p>
             <h2 className="price_value">
@@ -188,21 +162,6 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
-            {/* type & tags */}
-            {/*
-            <div className="meta-section">
-              <span className="label_font">Type</span>
-              <span className="tag-list">
-                <Link to={product.productTypeSlug}>{product.productType}</Link>
-              </span>
-              <span className="label_font">Tags</span>
-              <span className="tag-list">
-                {product.tags.map((tag) => (
-                  <Link to={`/search?t=${tag}`}>{tag}</Link>
-                ))}
-              </span>
-            </div>
-                */}
           </div>
         </div>
       </div>
@@ -211,15 +170,13 @@ export default function Product({ data: { product, suggestions } }) {
 }
 
 export const query = graphql`
-  query ($id: String!, $productType: String!) {
+  query ($id: String!) {
     product: shopifyProduct(id: { eq: $id }) {
       title
       description
       productType
       totalInventory
-      productTypeSlug: gatsbyPath(
-        filePath: "/products/{ShopifyProduct.productType}"
-      )
+      productSlug: gatsbyPath(filePath: "/products/{ShopifyProduct.handle}")
       tags
       priceRangeV2 {
         maxVariantPrice {
@@ -259,14 +216,6 @@ export const query = graphql`
         name
         values
         id
-      }
-    }
-    suggestions: allShopifyProduct(
-      limit: 3
-      filter: { productType: { eq: $productType }, id: { ne: $id } }
-    ) {
-      nodes {
-        ...ProductCard
       }
     }
   }
