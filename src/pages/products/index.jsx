@@ -6,6 +6,8 @@ import { Seo } from "../../components/seo"
 import { MoreButton } from "../../components/more-button"
 import { title } from "./index.module.css"
 
+// ~ c'est la page qui recense tous les produits (homepage des produits)
+
 export default function Products({ data: { products } }) {
   return (
     <Layout>

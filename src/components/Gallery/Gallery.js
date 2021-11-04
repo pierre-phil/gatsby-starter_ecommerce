@@ -9,7 +9,7 @@ import "./gallery.scss"
 
 export default function Gallery({ galleryImages }) {
   // ~ incoming data
-  console.log("galleryImages :", galleryImages)
+  //   console.log("galleryImages :", galleryImages)
 
   // ~ show only 9 first images
   const [usePartialGallery, setUsePartialGallery] = useState(true)

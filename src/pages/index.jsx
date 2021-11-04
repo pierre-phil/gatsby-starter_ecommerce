@@ -19,6 +19,8 @@ export const query = graphql`
     }
   }
 `
+// ~ c'est la page d'accueil du site (homepage)
+
 function Hero(props) {
   return (
     <div className={container}>

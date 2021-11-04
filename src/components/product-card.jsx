@@ -44,7 +44,8 @@ export function ProductCard({ product, eager }) {
     }
   }
 
-  const hasImage = firstImage || Object.getOwnPropertyNames(storefrontImageData || {}).length
+  const hasImage =
+    firstImage || Object.getOwnPropertyNames(storefrontImageData || {}).length
 
   return (
     <Link
@@ -52,19 +53,17 @@ export function ProductCard({ product, eager }) {
       to={slug}
       aria-label={`View ${title} product page`}
     >
-      {hasImage
-        ? (
-          <div className={productImageStyle} data-name="product-image-box">
-            <GatsbyImage
-              alt={firstImage?.altText ?? title}
-              image={firstImage?.gatsbyImageData ?? storefrontImageData}
-              loading={eager ? "eager" : "lazy"}
-            />
-          </div>
-        ) : (
-          <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
-        )
-      }
+      {hasImage ? (
+        <div className={productImageStyle} data-name="product-image-box">
+          <GatsbyImage
+            alt={firstImage?.altText ?? title}
+            image={firstImage?.gatsbyImageData ?? storefrontImageData}
+            loading={eager ? "eager" : "lazy"}
+          />
+        </div>
+      ) : (
+        <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
+      )}
       <div className={productDetailsStyle}>
         <div className={productVendorStyle}>{vendor}</div>
         <h2 as="h2" className={productHeadingStyle}>
@@ -80,6 +79,7 @@ export const query = graphql`
   fragment ProductCard on ShopifyProduct {
     id
     title
+    # TODO : c'est ce champ qui donne le slug aux produits
     slug: gatsbyPath(
       filePath: "/products/{ShopifyProduct.productType}/{ShopifyProduct.handle}"
     )

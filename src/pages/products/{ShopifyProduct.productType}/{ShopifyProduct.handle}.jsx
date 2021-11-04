@@ -27,8 +27,6 @@ export default function Product({ data: { product, suggestions } }) {
   } = product
   const { client } = React.useContext(StoreContext)
 
-  console.log("images :", images)
-
   const [variant, setVariant] = React.useState({ ...initialVariant })
   const [quantity, setQuantity] = React.useState(1)
 
