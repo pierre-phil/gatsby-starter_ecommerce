@@ -1,0 +1,20 @@
+@import "../styles/variables.scss";
+
+.add-to-cart {
+  display: flex;
+  flex-direction: row;
+  color: $white;
+  background-color: $violet;
+  align-self: flex-end;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  align-items: center;
+  height: 3rem;
+  justify-content: center;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.add-to-cart:hover {
+  box-shadow: 0 4px 12px rgba($violet, 0.5);
+}
