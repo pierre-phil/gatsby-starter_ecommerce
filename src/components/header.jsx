@@ -6,13 +6,8 @@ import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
 import { Toast } from "./toast"
-import {
-  header,
-  container,
-  logo as logoCss,
-  searchButton,
-  nav,
-} from "./header.module.css"
+
+import "./header.scss"
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -24,13 +19,13 @@ export function Header() {
   }, 0)
 
   return (
-    <div className={container}>
-      <header className={header}>
-        <Link to="/" className={logoCss}>
+    <div className="container">
+      <header className="header">
+        <Link to="/" className="logo">
           <Logo />
         </Link>
-        <Navigation className={nav} />
-        <Link to="/search" className={searchButton}>
+        <Navigation className="nav" />
+        <Link to="/search" className="search-button">
           <SearchIcon />
         </Link>
         <CartButton quantity={quantity} />

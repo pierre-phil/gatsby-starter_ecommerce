@@ -1,0 +1,39 @@
+@import "../styles/variables.scss";
+
+.nav-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  height: 3rem;
+  display: flex;
+  color: $light-gray;
+  align-items: center;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: $violet;
+}
+
+.active-link,
+.nav-link[aria-active="page"] {
+  color: $violet;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.active-link:hover,
+.nav-link[aria-active="page"]:hover {
+  color: $violet;
+}
