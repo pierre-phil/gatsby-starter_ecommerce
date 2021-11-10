@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 .filter {
   display: flex;
 }
@@ -5,29 +7,29 @@
 .filter label {
   cursor: pointer;
   margin-top: 6px;
-  color: var(--text-color-secondary);
+  color: $light-gray;
   display: flex;
   align-items: baseline;
-  line-height: var(--loose);
-  font-size: var(--text-lg);
+  line-height: 2;
+  font-size: 1.2rem;
 }
 
 .filter label:hover {
-  color: var(--input-ui-active);
+  color: $black;
 }
 
-.filter label.selectedLabel {
-  font-weight: var(--semibold);
-  color: var(--text-color);
+.filter label.selected-label {
+  font-weight: 600;
+  color: $black;
 }
 
 .filter summary {
-  font-weight: var(--bold);
+  font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracked);
-  padding-bottom: var(--space-md);
+  font-size: 0.8rem;
+  letter-spacing: 0.075em;
+  padding-bottom: 8px;
   list-style: none;
 }
 
@@ -51,10 +53,11 @@
   overflow-y: auto;
 }
 
-.clearButton {
-  color: var(--text-color-secondary);
-  font-size: var(--text-sm);
-  line-height: var(--solid);
+.clear-button {
+  color: $light-gray;
+  font-size: 0.9rem;
+  line-height: 1;
+  font-weight: bold;
 }
 
 .checkbox {
@@ -62,40 +65,40 @@
   align-items: center;
   justify-content: center;
   appearance: none;
-  border: 1px var(--text-color-secondary) solid;
-  width: var(--space-xl);
-  height: var(--space-xl);
-  border-radius: var(--radius-sm);
-  margin-right: var(--space-md);
+  border: 1px $light-gray solid;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 640px) {
   .filter label {
-    line-height: var(--dense);
+    line-height: 1.25;
     max-width: 240px;
   }
 
   .checkbox {
-    width: var(--space-lg);
-    height: var(--space-lg);
+    width: 1rem;
+    height: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .filter label {
-    font-size: var(--text-md);
+    font-size: 1rem;
   }
 }
 
 .checkbox:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
+  border-color: $violet;
+  background-color: $violet;
 }
 
 .checkbox::before {
   line-height: 0;
-  font-size: var(--text-sm);
-  font-weight: var(--bold);
-  color: var(--text-color-inverted);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: $white;
   content: "\2713";
 }

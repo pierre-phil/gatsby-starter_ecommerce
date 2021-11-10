@@ -1,12 +1,6 @@
 import * as React from "react"
-import {
-  filter,
-  summary,
-  filterOptions,
-  clearButton,
-  selectedLabel,
-  checkbox,
-} from "./check-filter.module.css"
+
+import "./check-filter.scss"
 
 export function CheckFilter({
   items,
@@ -36,33 +30,35 @@ export function CheckFilter({
   }
 
   return (
-    <details open={open} className={filter}>
+    <details open={open} className="filter">
       {name && (
         <summary>
-          <div className={summary}>
+          <div className="summary">
             {name}{" "}
             {selectedItems.length ? (
-              <button className={clearButton} onClick={clearItems}>
-                Clear
+              <button className="clear-button" onClick={clearItems}>
+                X
               </button>
             ) : undefined}
           </div>
         </summary>
       )}
-      <div className={filterOptions}>
+      <div className="filter-options">
         {items.map((item) => (
           <label
-            className={selectedItems.includes(item) ? selectedLabel : undefined}
+            className={
+              selectedItems.includes(item) ? "selected-label" : undefined
+            }
             key={item}
           >
             <input
               type="checkbox"
-              className={checkbox}
+              className="checkbox"
               onChange={toggleItem}
               value={item}
               checked={selectedItems.includes(item)}
             />{" "}
-            {item || "None"}
+            {item || "Aucun"}
           </label>
         ))}
       </div>

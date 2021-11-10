@@ -1,9 +1,11 @@
+@import "../styles/variables.scss";
+
 .input {
   display: block;
   grid-area: 1/1;
   background: none;
   text-align: right;
-  padding: var(--space-md);
+  padding: 0.7rem;
 }
 
 .symbolAfter .input {
@@ -16,12 +18,12 @@
 
 .currencySymbol {
   grid-area: 1/1;
-  color: var(--text-color-secondary);
-  padding: var(--space-md);
+  color: $light-gray;
+  padding: 0.7rem;
 }
 
 .wrap {
   display: grid;
-  background-color: var(--input-background);
-  border-radius: var(--radius-md);
+  background-color: $gray;
+  border-radius: 0.7rem;
 }

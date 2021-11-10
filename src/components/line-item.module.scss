@@ -1,25 +1,24 @@
 .title {
-  font-size: var(--text-2xl);
-  font-weight: var(--semibold);
-  line-height: var(--solid);
-  padding-bottom: var(--space-md);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
 }
 
 .variant {
-  font-size: var(--text-md);
+  font-size: 1rem;
   text-transform: capitalize;
-  padding-bottom: var(--space-sm);
+  padding-bottom: 0.3rem;
 }
 
 .remove button {
-  font-size: var(--text-md);
+  font-size: 1rem;
 
   display: inline-flex;
   align-items: center;
 }
 
 .remove button svg {
-  margin-right: var(--space-md);
+  margin-right: 0.5rem;
 }
 
 .totals {

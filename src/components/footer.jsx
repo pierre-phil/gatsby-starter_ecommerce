@@ -8,7 +8,7 @@ import {
   logos,
   footerNavList,
   footerNavListItem,
-} from "./footer.module.css"
+} from "./footer.module.scss"
 
 export function Footer() {
   return (

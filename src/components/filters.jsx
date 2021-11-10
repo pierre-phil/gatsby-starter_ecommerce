@@ -6,7 +6,7 @@ import {
   clearButton,
   priceFields,
   summary,
-} from "./filters.module.css"
+} from "./filters.module.scss"
 
 export function Filters({
   currencyCode,
@@ -41,7 +41,7 @@ export function Filters({
       <details className={priceFilterStyle} open={true}>
         <summary>
           <div className={summary}>
-            Price
+            Prix
             {(filters.maxPrice || filters.minPrice) && (
               <button
                 className={clearButton}
@@ -53,24 +53,25 @@ export function Filters({
                   }))
                 }
               >
-                Reset
+                X
               </button>
             )}
           </div>
         </summary>
         <div className={priceFields}>
+          De
           <CurrencyField
             {...currencyCode}
-            aria-label="Minimum price"
+            aria-label="Prix minimum"
             value={filters.minPrice}
             onChange={(event) =>
               updateNumeric("minPrice", event.currentTarget.value)
             }
           />{" "}
-          –{" "}
+          à{" "}
           <CurrencyField
             {...currencyCode}
-            aria-label="Maximum price"
+            aria-label="Prix maximum"
             value={filters.maxPrice}
             onChange={(event) =>
               updateNumeric("maxPrice", event.currentTarget.value)
@@ -78,21 +79,21 @@ export function Filters({
           />
         </div>
       </details>
-      <hr />
+      {/*       <hr />
       <CheckFilter
-        name="Brands"
+        name="Marque"
         items={vendors}
         selectedItems={filters.vendors}
         setSelectedItems={(value) => updateFilter("vendors", value)}
       />
-      <hr />
-      <CheckFilter
+      <hr /> 
+            <CheckFilter
         open={true}
         name="Tags"
         items={tags}
         selectedItems={filters.tags}
         setSelectedItems={(value) => updateFilter("tags", value)}
-      />
+      /> */}
     </>
   )
 }

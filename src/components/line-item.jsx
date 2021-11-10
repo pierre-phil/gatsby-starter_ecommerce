@@ -12,15 +12,11 @@ import {
   variant,
   totals,
   priceColumn,
-} from "./line-item.module.css"
+} from "./line-item.module.scss"
 
 export function LineItem({ item }) {
-  const {
-    removeLineItem,
-    checkout,
-    updateLineItem,
-    loading,
-  } = React.useContext(StoreContext)
+  const { removeLineItem, checkout, updateLineItem, loading } =
+    React.useContext(StoreContext)
   const [quantity, setQuantity] = React.useState(item.quantity)
 
   const variantImage = {
@@ -96,8 +92,8 @@ export function LineItem({ item }) {
           {item.variant.title === "Default Title" ? "" : item.variant.title}
         </div>
         <div className={remove}>
-          <button onClick={handleRemove}>
-            <DeleteIcon /> Remove
+          <button onClick={handleRemove} title="Supprimer">
+            <DeleteIcon />
           </button>
         </div>
       </td>
