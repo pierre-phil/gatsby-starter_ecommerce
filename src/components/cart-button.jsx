@@ -1,18 +1,17 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import CartIcon from "../icons/cart"
-
-import "./cart-button.scss"
+import { cartButton, badge } from "./cart-button.module.scss"
 
 export function CartButton({ quantity }) {
   return (
     <Link
-      aria-label={`Panier d'achat avec ${quantity} produits`}
+      aria-label={`Shopping Cart with ${quantity} items`}
       to="/cart"
-      className="cart-button"
+      className={cartButton}
     >
       <CartIcon />
-      {quantity > 0 && <div className="badge">{quantity}</div>}
+      {quantity > 0 && <div className={badge}>{quantity}</div>}
     </Link>
   )
 }

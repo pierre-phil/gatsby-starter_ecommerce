@@ -1,12 +1,14 @@
+@import "../styles/variables.scss";
+
 .productCardStyle {
   max-width: 400px;
   cursor: pointer;
   text-decoration: none;
-  padding-bottom: var(--space-md);
+  padding-bottom: 0.5rem;
 }
 
 .productImageStyle {
-  margin-bottom: var(--space-md);
+  margin-bottom: 0.5rem;
 }
 
 .productDetailsStyle {
@@ -14,23 +16,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: var(--semibold);
+  font-weight: 500;
 }
 
 .productVendorStyle {
-  font-size: var(--text-sm);
-  color: var(--text-color-secondary);
+  font-size: 1rem;
+  color: $light-gray;
+  display: none;
 }
 
 .productHeadingStyle {
   width: 100%;
-  font-size: var(--text-lg);
+  font-size: 1.2rem;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: var(--dense);
+  line-height: 1.125;
 }
 
 .productPrice {
-  color: var(--text-color-secondary);
+  color: $light-gray;
 }

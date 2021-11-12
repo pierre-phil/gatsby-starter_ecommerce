@@ -1,15 +1,17 @@
+@import "../styles/variables.scss";
+
 .navLink {
-  background-color: var(--primary);
-  border-bottom-right-radius: var(--radius-sm);
+  background-color: $violet;
+  border-bottom-right-radius: 4px;
   clip: rect(1px, 1px, 1px, 1px);
-  color: var(--text-color-inverted);
-  font-size: var(--text-sm);
-  font-weight: var(--medium);
+  color: $white;
+  font-size: 1rem;
+  font-weight: 500;
   left: 0;
   margin: 0;
   overflow: hidden;
   padding: 0;
-  padding: var(--space-lg);
+  padding: 1rem;
   position: absolute;
   top: 0;
 }

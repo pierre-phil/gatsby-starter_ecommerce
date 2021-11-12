@@ -1,0 +1,22 @@
+@import "../styles/variables.scss";
+
+.moreButton {
+  align-items: center;
+  background: $violet;
+  border-radius: 8px;
+  color: $white;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 3rem;
+  justify-content: center;
+  line-height: 1;
+  margin: 3rem auto 0.5rem;
+  padding: 0.2rem 1.5rem;
+  width: max-content;
+  transition: box-shadow 0.125s ease-in;
+}
+
+.moreButton:hover {
+  box-shadow: 0 4px 12px rgba(55, 182, 53, 0.5);
+}

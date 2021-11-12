@@ -1,6 +1,6 @@
 @import "../styles/variables.scss";
 
-.nav-style {
+.navStyle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,7 +9,7 @@
   font-weight: 500;
 }
 
-.nav-link {
+.navLink {
   cursor: pointer;
   text-decoration: none;
   height: 3rem;
@@ -21,19 +21,19 @@
   text-transform: uppercase;
 }
 
-.nav-link:hover {
+.navLink:hover {
   color: $violet;
 }
 
-.active-link,
-.nav-link[aria-active="page"] {
+.activeLink,
+.navLink[aria-active="page"] {
   color: $violet;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-.active-link:hover,
-.nav-link[aria-active="page"]:hover {
+.activeLink:hover,
+.navLink[aria-active="page"]:hover {
   color: $violet;
 }

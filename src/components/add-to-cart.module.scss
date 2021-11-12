@@ -1,6 +1,6 @@
 @import "../styles/variables.scss";
 
-.add-to-cart {
+.addToCart {
   display: flex;
   flex-direction: row;
   color: $white;
@@ -15,6 +15,6 @@
   transition: box-shadow 0.2s ease-in;
 }
 
-.add-to-cart:hover {
+.addToCart:hover {
   box-shadow: 0 4px 12px rgba($violet, 0.5);
 }

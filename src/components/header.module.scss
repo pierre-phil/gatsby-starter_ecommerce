@@ -13,7 +13,7 @@
   width: 100%;
   padding: 1rem 2rem;
   grid-template-columns: 3rem 1fr min-content min-content;
-  grid-template-areas: "logo nada search-button cartButton" "navHeader navHeader navHeader navHeader";
+  grid-template-areas: "logo nada searchButton cartButton" "navHeader navHeader navHeader navHeader";
   align-items: center;
   background-color: $white;
 }
@@ -35,7 +35,7 @@
 
 @media (min-width: 640px) {
   .header {
-    grid-template-areas: "logo navHeader search-button cartButton";
+    grid-template-areas: "logo navHeader searchButton cartButton";
   }
 }
 
@@ -63,19 +63,19 @@
   align-self: stretch;
 }
 
-.search-button {
+.searchButton {
   color: $light-gray;
-  grid-area: search-button;
+  grid-area: searchButton;
   width: 3rem;
   height: 3rem;
   display: grid;
   place-items: center;
 }
 
-.search-button:hover {
+.searchButton:hover {
   color: $violet;
 }
 
-.search-button[aria-current="page"] {
+.searchButton[aria-current="page"] {
   color: $violet;
 }

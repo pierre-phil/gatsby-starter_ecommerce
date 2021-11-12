@@ -10,7 +10,7 @@ import {
   productDetailsStyle,
   productVendorStyle,
   productPrice,
-} from "./product-card.module.css"
+} from "./product-card.module.scss"
 
 export function ProductCard({ product, eager }) {
   const {
