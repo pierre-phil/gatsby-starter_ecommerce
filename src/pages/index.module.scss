@@ -1,0 +1,42 @@
+@import "../styles/variables.scss";
+
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: var(--space-3xl);
+  max-width: 76ch;
+}
+
+.intro {
+  padding-bottom: 1rem;
+  line-height: 1.25;
+  font-size: 2rem;
+  color: $light-gray;
+}
+
+.callOut {
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: $light-gray;
+}
+
+.callOut > strong {
+  text-decoration: underline;
+}
+
+.callToAction {
+  font-size: var(--text-prose);
+  line-height: 1.25;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: $light-gray;
+}
+
+.deployButton {
+  margin-top: 1rem;
+}

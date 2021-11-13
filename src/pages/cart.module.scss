@@ -1,8 +1,10 @@
+@import "../styles/variables.scss";
+
 .title {
-  font-size: var(--text-display);
-  font-weight: var(--bold);
+  font-size: 2rem;
+  font-weight: bold;
   margin: 0;
-  padding: var(--space-2xl) 0 var(--space-2xl);
+  padding: 2rem 0 2rem;
 }
 
 .table {
@@ -12,14 +14,14 @@
   width: 100%;
   display: grid;
   grid-template-columns: 48px 1fr min-content;
-  gap: var(--space-md) var(--space-2xl);
+  gap: 0.5rem 2rem;
 }
 
 .table th {
   text-align: left;
   text-transform: uppercase;
-  font-size: var(--text-xs);
-  padding-bottom: var(--space-2xl);
+  font-size: 0.8rem;
+  padding-bottom: 2rem;
 }
 
 .table tr,
@@ -32,7 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 0 var(--size-gutter-raw);
+  padding: 0 2rem;
 }
 
 .totals,
@@ -41,39 +43,39 @@
 }
 
 .summary {
-  font-weight: var(--semibold);
-  font-size: var(--text-lg);
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .grandTotal {
-  font-size: var(--text-2xl);
-  font-weight: var(--semibold);
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .checkoutButton {
   align-items: center;
-  background: var(--primary);
-  border-radius: var(--radius-md);
-  color: var(--text-color-inverted);
+  background: $violet;
+  border-radius: 8px;
+  color: $white;
   display: flex;
-  font-size: var(--text-md);
-  font-weight: var(--semibold);
-  height: var(--size-input);
+  font-size: 1rem;
+  font-weight: 600;
+  height: 2rem;
   justify-content: center;
-  line-height: var(--solid);
-  margin: var(--space-3xl) auto var(--space-md);
-  padding: var(--space-sm) var(--space-xl);
+  line-height: 1;
+  margin: 3rem auto 0.5rem;
+  padding: 0.4rem 1.5rem;
   width: max-content;
-  transition: var(--transition);
+  transition: box-shadow 0.125s ease-in;
 }
 
 .checkoutButton:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(55, 182, 53, 0.5);
 }
 
 /* Apply only to first of class */
 .summary td {
-  padding-top: var(--space-3xl);
+  padding-top: 3rem;
 }
 
 .summary ~ .summary td {
@@ -123,18 +125,18 @@
 }
 
 .emptyStateHeading {
-  color: var(--text-color);
-  font-size: var(--text-display);
-  font-weight: var(--bold);
-  margin-bottom: var(--space-lg);
+  color: $gray;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .emptyStateLink {
   display: inline-block;
-  color: var(--primary);
-  font-weight: var(--bold);
-  margin-top: var(--space-xl);
-  font-size: var(--text-xl);
+  color: $violet;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 640px) {

@@ -8,7 +8,7 @@ import {
   callOut,
   callToAction,
   deployButton,
-} from "./index.module.css"
+} from "./index.module.scss"
 
 export const query = graphql`
   query {

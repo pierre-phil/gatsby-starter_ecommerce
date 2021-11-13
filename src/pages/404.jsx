@@ -1,15 +1,13 @@
 import * as React from "react"
 import { Layout } from "../components/layout"
-import { heading, paragraph, container } from "./404.module.css"
+import { heading, paragraph, container } from "./404.module.scss"
 
 export default function NotFoundPage() {
   return (
     <Layout>
       <div className={container}>
-        <h1 className={heading}>Page Not Found</h1>
-        <p className={paragraph}>
-          Sorry, we couldn't find what you were looking for
-        </p>
+        <h1 className={heading}>Page inexistante</h1>
+        <p className={paragraph}>Désolé, la page n'existe pas.</p>
       </div>
     </Layout>
   )

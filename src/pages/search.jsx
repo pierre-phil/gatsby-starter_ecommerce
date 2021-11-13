@@ -38,7 +38,7 @@ import {
   activeFilters,
   filterWrap,
   emptyState,
-} from "./search-page.module.css"
+} from "./search-page.module.scss"
 
 const DEFAULT_PRODUCTS_PER_PAGE = 24
 
