@@ -54,6 +54,10 @@
   padding: 0 2rem;
 }
 
+/*=============================================
+=                   Section                   =
+=============================================*/
+
 @media (min-width: 1024px) {
   .filterWrap {
     padding: 0;
@@ -155,7 +159,7 @@
   color: $violet;
 }
 
-.caca {
+.searchContainer {
   display: flex;
   align-items: center;
 }
@@ -200,11 +204,11 @@
 
 .productList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 1rem;
 }
+
+/*============  End of Section  =============*/
 
 @media (min-width: 1024px) {
   .filterTitle {

@@ -19,7 +19,7 @@ import {
   visuallyHidden,
   main,
   search,
-  caca,
+  searchContainer,
   searchIcon,
   sortSelector,
   results,
@@ -153,11 +153,11 @@ function SearchPage({
 
   return (
     <Layout>
-      <h1 className={visuallyHidden}>Search Results</h1>
+      <h1 className={visuallyHidden}>Résultats</h1>
       <div className={main}>
         <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
-          <div className={caca}>
+          <div className={searchContainer}>
             <button
               className={[
                 filterButton,
@@ -172,17 +172,18 @@ function SearchPage({
             </button>
             <div className={sortSelector}>
               <label>
-                <span>Sort by:</span>
+                <span>Tri :</span>
                 <select
                   value={sortKey}
                   // eslint-disable-next-line
                   onChange={(e) => setSortKey(e.target.value)}
+                  title="Trier"
                 >
-                  <option value="RELEVANCE">Relevance</option>
-                  <option value="PRICE">Price</option>
-                  <option value="TITLE">Title</option>
-                  <option value="CREATED_AT">New items</option>
-                  <option value="BEST_SELLING">Trending</option>
+                  <option value="RELEVANCE">Pertinence</option>
+                  <option value="PRICE">Prix</option>
+                  <option value="TITLE">Titre</option>
+                  <option value="CREATED_AT">Nouveautés</option>
+                  <option value="BEST_SELLING">Tendance</option>
                 </select>
               </label>
               <SortIcon className={sortIcon} />
@@ -191,7 +192,7 @@ function SearchPage({
         </div>
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
           <div className={filterTitle}>
-            <h2>Filter</h2>
+            <h2>Filtres</h2>
             <button aria-hidden onClick={() => setShowModal(false)}>
               <CrossIcon />
             </button>
@@ -214,15 +215,15 @@ function SearchPage({
         >
           {isFetching ? (
             <p className={progressStyle}>
-              <Spinner aria-valuetext="Searching" /> Searching
-              {filters.term ? ` for "${filters.term}"…` : `…`}
+              <Spinner aria-valuetext="Searching" /> Recherche
+              {filters.term ? ` de "${filters.term}"…` : `…`}
             </p>
           ) : (
             <p className={resultsStyle}>
-              Search results{" "}
+              Résultats{" "}
               {filters.term && (
                 <>
-                  for "<span>{filters.term}</span>"
+                  pour "<span>{filters.term}</span>"
                 </>
               )}
             </p>
@@ -250,7 +251,7 @@ function SearchPage({
             </ul>
           )}
           {!isFetching && products.length === 0 && (
-            <div className={emptyState}>No results found</div>
+            <div className={emptyState}>Pas de résultats</div>
           )}
           {hasPreviousPage || hasNextPage ? (
             <Pagination
@@ -287,7 +288,7 @@ function SearchBar({ defaultTerm, setFilters }) {
           setTerm(e.target.value)
           debouncedSetFilters(e.target.value)
         }}
-        placeholder="Search..."
+        placeholder="Rechercher..."
       />
       {term ? (
         <button
@@ -297,7 +298,7 @@ function SearchBar({ defaultTerm, setFilters }) {
             setTerm("")
             setFilters((filters) => ({ ...filters, term: "" }))
           }}
-          aria-label="Clear search query"
+          aria-label="Effacer la recherche"
         >
           <CrossIcon />
         </button>
@@ -315,7 +316,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
         className={paginationButton}
         disabled={!hasPreviousPage}
         onClick={previousPage}
-        aria-label="Previous page"
+        aria-label="Précédente"
       >
         <CgChevronLeft />
       </button>
@@ -323,7 +324,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
         className={paginationButton}
         disabled={!hasNextPage}
         onClick={nextPage}
-        aria-label="Next page"
+        aria-label="Suivante"
       >
         <CgChevronRight />
       </button>
