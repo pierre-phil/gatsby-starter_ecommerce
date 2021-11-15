@@ -99,13 +99,7 @@
 }
 
 .search {
-  position: relative;
-  grid-area: search;
-  height: min-content;
-  display: grid;
-  grid-template-columns: auto max-content max-content;
-  align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .search input {
@@ -150,9 +144,6 @@
 
 .filterButton {
   color: $light-gray;
-  display: grid;
-  place-items: center;
-  width: 3rem;
   height: 3rem;
 }
 
@@ -162,6 +153,11 @@
 
 .filterButton:hover {
   color: $violet;
+}
+
+.caca {
+  display: flex;
+  align-items: center;
 }
 
 .sortSelector {
@@ -180,7 +176,6 @@
 }
 
 .sortSelector select {
-  padding-left: 1rem;
   opacity: 0;
   width: 3rem;
   height: 3rem;
@@ -252,15 +247,15 @@
   }
 
   .main {
+    padding-top: 2rem;
     grid-template-columns: max-content 1fr;
     grid-template-areas:
-      "search search"
+      "filters search"
       "filters results";
+    border: 2px solid red;
   }
 
   .sortSelector {
-    padding-left: 1rem;
-    padding-right: 1rem;
     justify-content: flex-end;
   }
 
@@ -287,11 +282,6 @@
 
   .search {
     grid-gap: 2rem;
-    padding: 0;
-  }
-
-  .results {
-    padding: 0;
   }
 
   .sortSelector {

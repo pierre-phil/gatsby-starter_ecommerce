@@ -19,6 +19,7 @@ import {
   visuallyHidden,
   main,
   search,
+  caca,
   searchIcon,
   sortSelector,
   results,
@@ -156,34 +157,36 @@ function SearchPage({
       <div className={main}>
         <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
-          <button
-            className={[
-              filterButton,
-              filterCount ? activeFilters : undefined,
-            ].join(" ")}
-            onClick={() => setShowModal((show) => !show)}
-            // This is hidden because the filters are already visible to
-            // screenreaders, so the modal isnt needed.
-            aria-hidden
-          >
-            <FilterIcon />
-          </button>
-          <div className={sortSelector}>
-            <label>
-              <span>Sort by:</span>
-              <select
-                value={sortKey}
-                // eslint-disable-next-line
-                onChange={(e) => setSortKey(e.target.value)}
-              >
-                <option value="RELEVANCE">Relevance</option>
-                <option value="PRICE">Price</option>
-                <option value="TITLE">Title</option>
-                <option value="CREATED_AT">New items</option>
-                <option value="BEST_SELLING">Trending</option>
-              </select>
-            </label>
-            <SortIcon className={sortIcon} />
+          <div className={caca}>
+            <button
+              className={[
+                filterButton,
+                filterCount ? activeFilters : undefined,
+              ].join(" ")}
+              onClick={() => setShowModal((show) => !show)}
+              // This is hidden because the filters are already visible to
+              // screenreaders, so the modal isnt needed.
+              aria-hidden
+            >
+              <FilterIcon />
+            </button>
+            <div className={sortSelector}>
+              <label>
+                <span>Sort by:</span>
+                <select
+                  value={sortKey}
+                  // eslint-disable-next-line
+                  onChange={(e) => setSortKey(e.target.value)}
+                >
+                  <option value="RELEVANCE">Relevance</option>
+                  <option value="PRICE">Price</option>
+                  <option value="TITLE">Title</option>
+                  <option value="CREATED_AT">New items</option>
+                  <option value="BEST_SELLING">Trending</option>
+                </select>
+              </label>
+              <SortIcon className={sortIcon} />
+            </div>
           </div>
         </div>
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
