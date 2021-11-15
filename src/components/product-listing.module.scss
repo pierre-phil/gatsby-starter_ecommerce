@@ -1,7 +1,15 @@
+@import "../styles/variables.scss";
+
 .listingContainerStyle {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
   gap: 2rem;
   padding: 0 2rem;
+}
+
+@media screen and (max-width: $md) {
+  .listingContainerStyle {
+    grid-template-columns: 1fr;
+  }
 }

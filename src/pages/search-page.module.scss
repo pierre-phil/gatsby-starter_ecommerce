@@ -21,6 +21,11 @@
     "filters";
 }
 
+.search,
+.results {
+  padding: 0 2rem;
+}
+
 .filterStyle {
   grid-area: filters;
   /* Visually hidden */
@@ -91,15 +96,10 @@
 
 .results {
   grid-area: results;
-  padding: 0 2rem;
 }
 
 .results ul {
   flex-direction: column;
-}
-
-.search {
-  padding: 1rem 2rem;
 }
 
 .search input {
@@ -252,7 +252,6 @@
     grid-template-areas:
       "filters search"
       "filters results";
-    border: 2px solid red;
   }
 
   .sortSelector {
