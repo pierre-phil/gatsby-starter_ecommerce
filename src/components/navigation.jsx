@@ -16,14 +16,6 @@ export function Navigation({ className }) {
 
   return (
     <nav className={[navStyle, className].join(" ")}>
-      <Link
-        key="All"
-        className={navLink}
-        to="/products/"
-        activeClassName={activeLink}
-      >
-        {`Produits (${productsCount.length})`}
-      </Link>
       {productsCount.map((name) => (
         <Link
           key={name}

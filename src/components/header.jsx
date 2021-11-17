@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
-import Logo from "../icons/logo"
+import { RiHome2Line as HomeLogo } from "react-icons/ri"
 import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
@@ -27,11 +27,7 @@ export function Header() {
     <div className={container}>
       <header className={header}>
         <Link to="/" className={logoCss}>
-          <Logo />
-        </Link>
-        <Navigation className={nav} />
-        <Link to="/search" className={searchButton}>
-          <SearchIcon />
+          <HomeLogo size="1.6rem" className="icon" />
         </Link>
         <CartButton quantity={quantity} />
       </header>

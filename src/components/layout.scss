@@ -21,3 +21,12 @@ p {
     "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+// icons
+
+.icon {
+  color: $light-gray;
+  &:hover {
+    color: $violet;
+  }
+}
