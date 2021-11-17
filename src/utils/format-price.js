@@ -5,7 +5,7 @@
  * @returns
  */
 export const formatPrice = (currency, value) =>
-  Intl.NumberFormat("en-US", {
+  Intl.NumberFormat("fr-FR", {
     currency,
     minimumFractionDigits: 2,
     style: "currency",

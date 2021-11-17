@@ -44,14 +44,14 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            <h1 className={title}>Your cart</h1>
+            <h1 className={title}>Votre panier</h1>
             <table className={table}>
               <thead>
                 <tr>
                   <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Product</th>
-                  <th className={collapseColumn}>Price</th>
-                  <th>Qty.</th>
+                  <th className={productHeader}>Produit</th>
+                  <th className={collapseColumn}>Prix</th>
+                  <th>Qté.</th>
                   <th className={[totals, collapseColumn].join(" ")}>Total</th>
                 </tr>
               </thead>
@@ -64,7 +64,7 @@ export default function CartPage() {
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Subtotal</td>
+                  <td className={labelColumn}>Sous-total</td>
                   <td className={totals}>
                     {formatPrice(
                       checkout.subtotalPriceV2.currencyCode,
@@ -88,14 +88,14 @@ export default function CartPage() {
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Shipping</td>
-                  <td className={totals}>Calculated at checkout</td>
+                  <td className={labelColumn}>Frais d'expédition</td>
+                  <td className={totals}>Calculés lors du paiement</td>
                 </tr>
                 <tr className={grandTotal}>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Total Price</td>
+                  <td className={labelColumn}>Total</td>
                   <td className={totals}>
                     {formatPrice(
                       checkout.totalPriceV2.currencyCode,
@@ -110,7 +110,7 @@ export default function CartPage() {
               disabled={loading}
               className={checkoutButton}
             >
-              Checkout
+              Paiement
             </button>
           </>
         )}
