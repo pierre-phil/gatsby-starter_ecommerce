@@ -37,10 +37,10 @@ export function Header() {
       </header>
       <Toast show={loading || didJustAddToCart}>
         {!didJustAddToCart ? (
-          "Updating…"
+          "En cours…"
         ) : (
           <>
-            Added to cart{" "}
+            Ajouté au panier{" "}
             <svg
               width="14"
               height="14"

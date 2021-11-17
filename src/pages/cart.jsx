@@ -34,13 +34,12 @@ export default function CartPage() {
       <div className={wrap}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
-            <h1 className={emptyStateHeading}>Your cart is empty</h1>
+            <h1 className={emptyStateHeading}>Votre panier est vide</h1>
             <p>
-              Looks like you haven’t found anything yet. We understand that
-              sometimes it’s hard to chose — maybe this helps:
+              Il semblerait que vous n'ayez pas encore trouvé votre bonheur !
             </p>
             <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
-              View trending products
+              Voir les produits du moment
             </Link>
           </div>
         ) : (
