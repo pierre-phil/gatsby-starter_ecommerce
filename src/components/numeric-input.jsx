@@ -12,7 +12,7 @@ export function NumericInput({
   return (
     <div className={wrap}>
       <input
-        disabled={disabled}
+        disabled={true}
         type="numeric"
         className={[input, className].join(" ")}
         {...props}
