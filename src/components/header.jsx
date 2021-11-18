@@ -2,10 +2,14 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
 import { RiHome2Line as HomeLogo } from "react-icons/ri"
-import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import { Toast } from "./toast"
-import { header, container, logo as logoCss, nav } from "./header.module.scss"
+import { header, container, logo as logoCss } from "./header.module.scss"
+import {
+  navLink,
+  activeLink,
+  navLinksContainer,
+} from "./navigation.module.scss"
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -22,7 +26,24 @@ export function Header() {
         <Link to="/" className={logoCss} title="Accueil">
           <HomeLogo size="1.6rem" className="icon" />
         </Link>
-        <Navigation className={nav} />
+        <div className={navLinksContainer}>
+          <Link
+            className={navLink}
+            to={`/products/cle-usb-yuli/`}
+            activeClassName={activeLink}
+            title="Acheter"
+          >
+            Acheter
+          </Link>
+          <Link
+            className={navLink}
+            to={`/stream/`}
+            activeClassName={activeLink}
+            title="Stream"
+          >
+            Stream
+          </Link>
+        </div>
         <CartButton quantity={quantity} />
       </header>
       <Toast show={loading || didJustAddToCart}>
