@@ -14,7 +14,7 @@ export default function Gallery({ galleryImages }) {
   // ~ show only 9 first images
   const [usePartialGallery, setUsePartialGallery] = useState(true)
 
-  function partialGallery(galleryImages) {
+  /*   function partialGallery(galleryImages) {
     if (usePartialGallery === true) {
       galleryImages = galleryImages.slice(0, 9)
       // console.log("galleryImages :", galleryImages)
@@ -22,7 +22,7 @@ export default function Gallery({ galleryImages }) {
     } else {
       return galleryImages
     }
-  }
+  } */
 
   // ~ isOpen
   const [isOpen, setIsOpen] = useState(false)
@@ -63,7 +63,7 @@ export default function Gallery({ galleryImages }) {
       </div>
 
       {/* Gallery grid */}
-      <div className="gallery-grid">
+      {/*     <div className="gallery-grid">
         {partialGallery(galleryImages).map((el, index) => {
           return (
             <div className="gallery-grid-image_container" key={el.id}>
@@ -84,7 +84,7 @@ export default function Gallery({ galleryImages }) {
             </div>
           )
         })}
-      </div>
+      </div> */}
       {/* Gallery expand button */}
       {galleryImages.length > 9 && (
         <div className="expand-button_container">

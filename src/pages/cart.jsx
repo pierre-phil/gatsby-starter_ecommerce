@@ -37,8 +37,8 @@ export default function CartPage() {
             <p>
               Il semblerait que vous n'ayez pas encore trouvé votre bonheur !
             </p>
-            <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
-              Voir les produits du moment
+            <Link to="/products/cle-usb-yuli/" className={emptyStateLink}>
+              Voir notre merveilleuse clé USB Yuli
             </Link>
           </div>
         ) : (
