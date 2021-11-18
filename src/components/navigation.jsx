@@ -1,31 +1,33 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { Link } from "gatsby"
 import * as React from "react"
-import slugify from "@sindresorhus/slugify"
-import { navStyle, navLink, activeLink } from "./navigation.module.scss"
+import {
+  navStyle,
+  navLink,
+  activeLink,
+  logoContainer,
+} from "./navigation.module.scss"
 
 export function Navigation({ className }) {
-  const {
-    allShopifyProduct: { productsCount },
-  } = useStaticQuery(graphql`
-    query {
-      allShopifyProduct {
-        productsCount: distinct(field: title)
-      }
-    }
-  `)
-
   return (
     <nav className={[navStyle, className].join(" ")}>
-      {productsCount.map((name) => (
+      <div className={logoContainer}>
         <Link
-          key={name}
           className={navLink}
-          to={`/products/${slugify(name)}/`}
+          to={`/products/cle-usb-yuli/`}
           activeClassName={activeLink}
+          title="Acheter"
         >
-          {name}
+          Acheter
         </Link>
-      ))}
+        <Link
+          className={navLink}
+          to={`/stream/`}
+          activeClassName={activeLink}
+          title="Stream"
+        >
+          Stream
+        </Link>
+      </div>
     </nav>
   )
 }

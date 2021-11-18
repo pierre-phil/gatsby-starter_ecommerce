@@ -1,5 +1,11 @@
 @import "../styles/variables.scss";
 
+.logoContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
 .navStyle {
   display: flex;
   flex-direction: row;

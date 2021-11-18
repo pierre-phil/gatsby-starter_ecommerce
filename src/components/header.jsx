@@ -4,15 +4,8 @@ import { StoreContext } from "../context/store-context"
 import { RiHome2Line as HomeLogo } from "react-icons/ri"
 import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
-import SearchIcon from "../icons/search"
 import { Toast } from "./toast"
-import {
-  header,
-  container,
-  logo as logoCss,
-  searchButton,
-  nav,
-} from "./header.module.scss"
+import { header, container, logo as logoCss, nav } from "./header.module.scss"
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -26,9 +19,10 @@ export function Header() {
   return (
     <div className={container}>
       <header className={header}>
-        <Link to="/" className={logoCss}>
+        <Link to="/" className={logoCss} title="Accueil">
           <HomeLogo size="1.6rem" className="icon" />
         </Link>
+        <Navigation className={nav} />
         <CartButton quantity={quantity} />
       </header>
       <Toast show={loading || didJustAddToCart}>
