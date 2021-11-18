@@ -48,7 +48,7 @@ export default function Gallery({ galleryImages }) {
 
   // ~ image counter
   // affiche la position de l'image / le nombre total d'images dans la barre supérieure
-  const imageCounter = `${index + 1} / ${galleryImages.length}`
+  //const imageCounter = `${index + 1} / ${galleryImages.length}`
 
   return (
     <div className="gallery-container">
@@ -124,7 +124,7 @@ export default function Gallery({ galleryImages }) {
           zoomOutLabel="Dézoomer"
           closeLabel="Fermer"
           imageLoadErrorMessage="L'image sera disponible prochainement."
-          toolbarButtons={[imageCounter]}
+          // toolbarButtons={[imageCounter]}
         />
       )}
     </div>
