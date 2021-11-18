@@ -14,6 +14,9 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  font-family: "Zen Kaku Gothic Antique", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .product_description {
@@ -59,13 +62,13 @@
 // stock
 
 .stock_left {
-  font-style: italic;
   font-size: 1.1rem;
 }
 
 .stock_left span {
   color: $violet;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 // price

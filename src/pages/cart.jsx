@@ -18,7 +18,6 @@ import {
   emptyStateContainer,
   emptyStateHeading,
   emptyStateLink,
-  title,
 } from "./cart.module.scss"
 
 export default function CartPage() {
@@ -44,7 +43,12 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            <h1 className={title}>Votre panier</h1>
+            <h1
+              className="title text-center uppercase italic"
+              style={{ marginBottom: "2rem" }}
+            >
+              Votre panier
+            </h1>
             <table className={table}>
               <thead>
                 <tr>

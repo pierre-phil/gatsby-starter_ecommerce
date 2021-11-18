@@ -93,6 +93,9 @@ export default function Product({ data: { product } }) {
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
+      <h1 className="title text-center uppercase italic">
+        Version physique limitée
+      </h1>
       <div className="product_container">
         <div className="product_box">
           {/* Images */}
@@ -117,7 +120,7 @@ export default function Product({ data: { product } }) {
             <span className="no-image">Pas d'image disponible</span>
           )}
           <div>
-            <h1 className="product_title">{title}</h1>
+            <h2 className="product_title">{title}</h2>
             <p className="product_description">{description}</p>
             <h2 className="price_value">
               <span>{price}</span>
@@ -165,6 +168,7 @@ export default function Product({ data: { product } }) {
           </div>
         </div>
       </div>
+      <h1 className="title text-center uppercase italic">Versions digitales</h1>
     </Layout>
   )
 }
