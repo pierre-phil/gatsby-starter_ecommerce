@@ -168,7 +168,12 @@ export default function Product({ data: { product } }) {
           </div>
         </div>
       </div>
-      <h1 className="title text-center uppercase italic">Versions digitales</h1>
+      <h1
+        className="title text-center uppercase italic"
+        id="versions-digitales"
+      >
+        Versions digitales
+      </h1>
     </Layout>
   )
 }

@@ -4,3 +4,38 @@
   max-width: 375px;
   border-radius: 5px;
 }
+
+.streaming-links_container {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.streaming-link {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: $violet;
+  border: 2px solid $violet;
+  border-radius: 3px;
+  max-width: 375px;
+  height: 2.7rem;
+  transition: 0.2s;
+  margin-bottom: 1.5rem;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &:hover {
+    background-color: $violet;
+    color: $white;
+    -webkit-box-shadow: 0px 0px 21px -1px rgba(85, 26, 139, 0.45);
+    box-shadow: 0px 0px 21px -1px rgba(85, 26, 139, 0.45);
+  }
+}
+
+.streaming-icon {
+  margin-right: 0.5rem;
+}
