@@ -1,0 +1,21 @@
+@import "../styles/variables.scss";
+
+.story_text {
+  p:first-of-type {
+    text-align: left;
+  }
+  p {
+    margin: 2rem 0;
+  }
+}
+
+.insta-link {
+  transition: 0.2s;
+  display: inline;
+  font-weight: bold;
+  width: 100%;
+  color: $violet;
+  &:hover {
+    box-shadow: inset 0 -3px 0 0 $light-violet;
+  }
+}

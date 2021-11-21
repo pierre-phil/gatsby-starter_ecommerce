@@ -14,12 +14,32 @@ body {
     "Segoe UI Symbol";
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 2rem;
+}
+
 // paragraphs
 
 p {
   font-family: "Zen Kaku Gothic Antique", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+// display
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
 
 // icons
@@ -31,7 +51,7 @@ p {
   }
 }
 
-// other
+// sections
 
 .container {
   display: block;
@@ -40,8 +60,23 @@ p {
   max-width: 80%;
 }
 
+// text
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shorten-text {
+  max-width: 800px;
+}
+
 .text-center {
   text-align: center;
+}
+
+.justify {
+  text-align: justify;
 }
 
 .uppercase {
@@ -50,4 +85,32 @@ p {
 
 .italic {
   font-style: italic;
+}
+
+// lists
+
+ul,
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+// button, CTA
+
+.CTA {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  color: $white;
+  background-color: $violet;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.CTA:hover {
+  box-shadow: 0 4px 12px rgba($violet, 0.5);
 }

@@ -3,6 +3,18 @@
 .front-cover {
   max-width: 375px;
   border-radius: 5px;
+  cursor: zoom-in;
+}
+
+.insta-link {
+  transition: 0.2s;
+  display: inline;
+  font-weight: bold;
+  width: 100%;
+  color: $violet;
+  &:hover {
+    box-shadow: inset 0 -3px 0 0 $light-violet;
+  }
 }
 
 .streaming-links_container {
@@ -38,4 +50,15 @@
 
 .streaming-icon {
   margin-right: 0.5rem;
+}
+
+.album-credits {
+  text-align: center;
+  p {
+    font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-size: 1rem;
+    margin: 0;
+  }
 }

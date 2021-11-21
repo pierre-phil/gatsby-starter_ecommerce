@@ -11,8 +11,8 @@ export default function Gallery({ galleryImages }) {
   // ~ incoming data
   //   console.log("galleryImages :", galleryImages)
 
-  // ~ show only 9 first images
-  const [usePartialGallery, setUsePartialGallery] = useState(true)
+  /* // ~ show only 9 first images
+  const [usePartialGallery, setUsePartialGallery] = useState(true) */
 
   /*   function partialGallery(galleryImages) {
     if (usePartialGallery === true) {
@@ -48,7 +48,7 @@ export default function Gallery({ galleryImages }) {
 
   // ~ image counter
   // affiche la position de l'image / le nombre total d'images dans la barre supérieure
-  //const imageCounter = `${index + 1} / ${galleryImages.length}`
+  const imageCounter = `${index + 1} / ${galleryImages.length}`
 
   return (
     <div className="gallery-container">
@@ -86,7 +86,7 @@ export default function Gallery({ galleryImages }) {
         })}
       </div> */}
       {/* Gallery expand button */}
-      {galleryImages.length > 9 && (
+      {/*       {galleryImages.length > 9 && (
         <div className="expand-button_container">
           <div className="expand-button_decoration">
             <hr />
@@ -103,7 +103,7 @@ export default function Gallery({ galleryImages }) {
             <hr />
           </div>
         </div>
-      )}
+      )} */}
       {/* Lightbox */}
       {isOpen && (
         <Lightbox
@@ -117,14 +117,14 @@ export default function Gallery({ galleryImages }) {
           onMovePrevRequest={() => setIndex(prevIndex)}
           onMoveNextRequest={() => setIndex(nextIndex)}
           imageTitle={galleryImages[index].altText}
-          imageCaption={galleryImages[index].altText}
+          // imageCaption={galleryImages[index].altText}
           nextLabel="Image suivante"
           prevLabel="Image précédente"
           zoomInLabel="Zoomer"
           zoomOutLabel="Dézoomer"
           closeLabel="Fermer"
           imageLoadErrorMessage="L'image sera disponible prochainement."
-          // toolbarButtons={[imageCounter]}
+          toolbarButtons={[imageCounter]}
         />
       )}
     </div>

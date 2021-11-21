@@ -24,7 +24,7 @@ export function Header() {
     <div className={container}>
       <header className={header}>
         <Link to="/" className={logoCss} title="Accueil">
-          <HomeLogo size="1.6rem" className="icon" />
+          <HomeLogo size="26px" className="icon" />
         </Link>
         <div className={navLinksContainer}>
           <Link
