@@ -1,7 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Layout } from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
+
+import { Layout } from "../components/layout"
+import { Seo } from "../components/seo"
+
 import { BsFillPlayFill as PlayIcon } from "react-icons/bs"
 
 import "./index.scss"
@@ -9,6 +12,7 @@ import "./index.scss"
 export default function IndexPage() {
   return (
     <Layout>
+      <Seo title="Hello" />
       <section className="container">
         <div className="story_text justify center-block shorten-text">
           <h2 className="title text-center uppercase italic">À propos</h2>

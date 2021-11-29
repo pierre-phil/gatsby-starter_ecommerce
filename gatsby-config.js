@@ -2,14 +2,14 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    siteTitle: "gatsby-starter-shopify",
-    siteTitleDefault: "gatsby-starter-shopify by @GatsbyJS",
+    siteTitle: "OZENKAWA & SACHA • Stream & achat en ligne",
+    siteTitleDefault: "OZENKAWA & SACHA",
     siteUrl: "https://shopify-demo.gatsbyjs.com",
-    hrefLang: "en",
+    hrefLang: "fr",
     siteDescription:
-      "A Gatsby starter using the latest Shopify plugin showcasing a store with product overview, individual product pages, and a cart.",
+      "L'album unique, né de la collaboration entre OZENKAWA et SACHA est disponible ! Écoutez et achetez une version physique directement en ligne.",
     siteImage: "/default-og-image.jpg",
-    twitter: "@gatsbyjs",
+    twitter: "@OZENKAWA",
   },
   flags: {
     FAST_DEV: true,
