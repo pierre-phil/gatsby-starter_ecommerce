@@ -7,6 +7,7 @@ import { Seo } from "../components/seo"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 
+import { BsZoomIn as ZoomIcon } from "react-icons/bs"
 import { BsSpotify as SpotifyIcon } from "react-icons/bs"
 import { FaDeezer as DeezerIcon } from "react-icons/fa"
 import { AiFillApple as AppleIcon } from "react-icons/ai"
@@ -55,12 +56,15 @@ export default function StreamPage({ data }) {
       <Seo title="Stream" />
       <h1 className="title text-center uppercase italic">Stream</h1>
       <div className="container">
-        <StaticImage
-          src="../images/cover_front.png"
-          alt=""
-          className="front-cover container"
-          onClick={() => setIsOpen(true)}
-        />
+        <div className="front-cover_container">
+          <StaticImage
+            src="../images/cover_front.png"
+            alt=""
+            className="front-cover container"
+            onClick={() => setIsOpen(true)}
+          />
+          <ZoomIcon className="zoom-icon" color="white" size="25px" />
+        </div>
       </div>
       {/* Lightbox */}
       {isOpen && (
@@ -87,6 +91,9 @@ export default function StreamPage({ data }) {
       )}
 
       <div className="container streaming-links_container">
+        <Link to="/products/cle-usb-yuli/" className="cta-buy">
+          &#8250; Version physique limitée &#8249;
+        </Link>
         <div className="streaming-link">
           <a
             href="https://www.spotify.com"
@@ -253,7 +260,7 @@ export default function StreamPage({ data }) {
 
 export const query = graphql`
   query albumCoversQuery {
-    allFile {
+    allFile(filter: { name: { regex: "/cover/" } }) {
       nodes {
         name
         childImageSharp {

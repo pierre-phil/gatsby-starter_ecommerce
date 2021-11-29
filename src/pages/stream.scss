@@ -17,6 +17,28 @@
   }
 }
 
+.front-cover_container {
+  max-width: 375px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zoom-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+}
+
+.cta-buy {
+  color: red;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
 .streaming-links_container {
   text-align: center;
   margin-top: 2.5rem;
