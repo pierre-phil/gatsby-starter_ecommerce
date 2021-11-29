@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
-import { RiHome2Line as HomeLogo } from "react-icons/ri"
+import { HomeButton } from "./home-button"
 import { CartButton } from "./cart-button"
 import { Toast } from "./toast"
-import { header, container, logo as logoCss } from "./header.module.scss"
+import { header, container } from "./header.module.scss"
 import {
   navLink,
   activeLink,
@@ -23,9 +23,7 @@ export function Header() {
   return (
     <div className={container}>
       <header className={header}>
-        <Link to="/" className={logoCss} title="Accueil">
-          <HomeLogo size="26px" className="icon" />
-        </Link>
+        <HomeButton />
         <div className={navLinksContainer}>
           <Link
             className={navLink}

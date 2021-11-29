@@ -1,0 +1,13 @@
+@import "../styles/variables.scss";
+
+.homeButton {
+  color: $light-gray;
+}
+
+.homeButton:hover {
+  color: $violet;
+}
+
+.homeButton[aria-current="page"] {
+  color: $violet;
+}

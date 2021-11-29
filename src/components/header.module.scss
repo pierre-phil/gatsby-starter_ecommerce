@@ -17,15 +17,6 @@
   background-color: $white;
 }
 
-.logo:hover {
-  color: $violet;
-  text-decoration: none;
-}
-
-.logo[aria-current="page"] {
-  color: $violet;
-}
-
 .nav {
   grid-area: navHeader;
   align-self: stretch;
