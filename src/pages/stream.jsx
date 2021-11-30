@@ -165,6 +165,7 @@ export default function StreamPage({ data }) {
         </div>
       </div>
       <div className="album-credits container">
+        <p style={{ marginBottom: "1.2rem" }}>Soutenir les créateurs 💜</p>
         <ul>
           <li>
             <p>Music</p>
