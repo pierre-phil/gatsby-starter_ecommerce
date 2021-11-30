@@ -12,7 +12,7 @@ import "./index.scss"
 export default function IndexPage() {
   return (
     <Layout>
-      <Seo title="Hello" />
+      <Seo title="Yuli" />
       <section className="container">
         <div className="story_text justify center-block shorten-text">
           <h2 className="title text-center uppercase italic">À propos</h2>
