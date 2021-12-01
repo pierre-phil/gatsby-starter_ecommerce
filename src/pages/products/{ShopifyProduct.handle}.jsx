@@ -130,7 +130,7 @@ export default function Product({ data: { product } }) {
                 aria-describedby="instructions"
               >
                 <Gallery galleryImages={images} />
-                <ZoomIcon className="zoom-icon" color="grey" size="20px" />
+                <ZoomIcon className="zoom-icon" color="grey" size="22px" />
               </div>
               {hasMultipleImages && (
                 <div className="scroll-for-more" id="instructions">
@@ -195,7 +195,8 @@ export default function Product({ data: { product } }) {
 
             {quantity === 3 && (
               <p className="subline">
-                Nous limitons à 3 produits par commande 🥰
+                Nous limitons à 3 produits par commande{" "}
+                <span style={{ fontStyle: "normal" }}>🥰</span>
               </p>
             )}
             <div className="countdown">

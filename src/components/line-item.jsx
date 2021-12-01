@@ -47,6 +47,8 @@ export function LineItem({ item }) {
   const handleQuantityChange = (value) => {
     if (value !== "" && Number(value) < 1) {
       return
+    } else if (value !== "" && Number(value) > 3) {
+      return
     }
     setQuantity(value)
     if (Number(value) >= 1) {

@@ -49,8 +49,7 @@
 }
 
 .summary {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .grandTotal {
@@ -101,6 +100,11 @@
 .grandTotal .labelColumn {
   grid-column-start: 1;
   grid-column-end: 3;
+  font-size: 1.2rem;
+}
+
+.grandTotal .totals {
+  font-size: 1.2rem;
 }
 
 .collapseColumn {
@@ -162,6 +166,10 @@
 
   .table {
     grid-template-columns: 80px 1fr repeat(3, min-content);
+  }
+
+  .wrap {
+    padding: 0 3rem;
   }
 }
 
