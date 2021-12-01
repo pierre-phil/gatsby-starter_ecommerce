@@ -98,7 +98,7 @@
 }
 
 .price_value {
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 
 // options
@@ -153,6 +153,21 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 1rem;
+}
+
+// countdown
+
+.countdown {
+  font-family: "Zen Kaku Gothic Antique", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.8rem;
+  font-style: italic;
+  color: $violet;
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
 }
 
 // labels & tags

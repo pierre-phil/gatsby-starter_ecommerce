@@ -12,6 +12,8 @@ import Gallery from "../../components/Gallery/Gallery"
 
 import { BsZoomIn as ZoomIcon } from "react-icons/bs"
 
+import Countdown from "react-countdown"
+
 import "./product-page.scss"
 
 export default function Product({ data: { product } }) {
@@ -86,6 +88,24 @@ export default function Product({ data: { product } }) {
   const hasImages = images.length > 0
   const hasMultipleImages = true || images.length > 1
 
+  // Countdown
+  const Completionist = () => <span></span>
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+      return <Completionist />
+    } else {
+      // Render a countdown
+      return (
+        <span>
+          La promotion prend fin dans {days} jours {hours} heures {minutes}{" "}
+          minutes
+        </span>
+      )
+    }
+  }
+
   return (
     <Layout>
       {firstImage ? (
@@ -130,9 +150,11 @@ export default function Product({ data: { product } }) {
               <span>{price}</span>
               <span>10€</span>
             </p>
+
             <p className="stock_left">
               Il reste <span>{totalInventory}</span> exemplaires en stock.
             </p>
+
             {/* options */}
             <fieldset className="options_wrapper">
               {hasVariants &&
@@ -169,6 +191,16 @@ export default function Product({ data: { product } }) {
                 quantity={quantity}
                 available={available}
               />
+            </div>
+
+            {quantity === 3 && (
+              <p className="subline">
+                Nous limitons à 3 produits par commande 🥰
+              </p>
+            )}
+            <div className="countdown">
+              <p>Frais de port : 1,20€</p>
+              <Countdown date="2022-01-01T00:00:00" renderer={renderer} />
             </div>
           </div>
         </div>
