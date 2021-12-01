@@ -10,6 +10,8 @@ import { formatPrice } from "../../utils/format-price"
 import { Seo } from "../../components/seo"
 import Gallery from "../../components/Gallery/Gallery"
 
+import { BsZoomIn as ZoomIcon } from "react-icons/bs"
+
 import "./product-page.scss"
 
 export default function Product({ data: { product } }) {
@@ -102,11 +104,13 @@ export default function Product({ data: { product } }) {
           {hasImages && (
             <div className="product-image_wrapper">
               <div
+                className="front-cover_container"
                 role="group"
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
                 <Gallery galleryImages={images} />
+                <ZoomIcon className="zoom-icon" color="grey" size="20px" />
               </div>
               {hasMultipleImages && (
                 <div className="scroll-for-more" id="instructions">
@@ -122,9 +126,10 @@ export default function Product({ data: { product } }) {
           <div>
             <h2 className="product_title">{title}</h2>
             <p className="product_description">{description}</p>
-            <h2 className="price_value">
+            <p className="price_value">
               <span>{price}</span>
-            </h2>
+              <span>10€</span>
+            </p>
             <p className="stock_left">
               Il reste <span>{totalInventory}</span> exemplaires en stock.
             </p>
