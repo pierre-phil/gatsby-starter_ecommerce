@@ -65,8 +65,9 @@
   display: flex;
   font-size: 1rem;
   font-weight: 600;
-  height: 2rem;
+  height: 2.7rem;
   justify-content: center;
+  text-transform: uppercase;
   line-height: 1;
   margin: 3rem auto 0.5rem;
   padding: 0.4rem 1.5rem;
@@ -75,7 +76,7 @@
 }
 
 .checkoutButton:hover {
-  box-shadow: 0 4px 12px rgba(55, 182, 53, 0.5);
+  box-shadow: 0 4px 12px rgba($violet, 0.5);
 }
 
 /* Apply only to first of class */
