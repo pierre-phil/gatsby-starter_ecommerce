@@ -112,3 +112,21 @@ li {
 .CTA:hover {
   box-shadow: 0 4px 12px rgba($violet, 0.5);
 }
+
+// links
+
+.legal-link_style {
+  text-decoration: underline;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: $violet;
+  }
+}
+
+// other
+
+hr {
+  color: $violet;
+  opacity: 0.2;
+}
